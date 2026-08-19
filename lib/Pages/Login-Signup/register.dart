@@ -15,19 +15,24 @@ class register extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: Container(
-              height: MediaQuery.of(context).size.height * 0.06,
-              width: MediaQuery.of(context).size.width * 0.06,
-              child: Image.asset("lib/icons/back2.png")),
-          onPressed: () {
+          icon: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.06,
+            width: MediaQuery.of(context).size.width * 0.06,
+            child: const Icon(
+              Icons.arrow_back_ios_new, // Versão moderna e centralizada do ícone
+              size: 20,
+            ),
+          ),
+        onPressed: () {
             Navigator.push(
                 context,
                 PageTransition(
                     type: PageTransitionType.leftToRight, child: login()));
           },
         ),
-        title: Text(
-          "Sign up",
+        title: 
+        Text(
+          "Criar conta",
           style: GoogleFonts.inter(
               color: Colors.black87,
               fontSize: 22.sp,
@@ -44,66 +49,21 @@ class register extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Center(
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width * 0.9,
-              child: TextField(
-                textAlign: TextAlign.start,
-                textInputAction: TextInputAction.none,
-                obscureText: false,
-                keyboardType: TextInputType.emailAddress,
-                textAlignVertical: TextAlignVertical.center,
-                decoration: InputDecoration(
-                    focusColor: Colors.black26,
-                    fillColor: Color.fromARGB(255, 247, 247, 247),
-                    filled: true,
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                      ),
-                      child: Container(
-                        child: Image.asset("lib/icons/person.png"),
-                      ),
-                    ),
-                    prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
-                    label: Text(
-                      "Enter your email",
-                      style: GoogleFonts.poppins(fontSize: 15.sp),
-                    ),
-                    floatingLabelBehavior: FloatingLabelBehavior.never,
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(30),
-                    )),
-              ),
-            ),
-          ),
+          Auth_text_field(text: "Digite seu nome", icon: Icons.person),
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(text: "Enter your name", icon: "lib/icons/email.png"),
+          Auth_text_field(text: "Digite seu e-mail", icon: Icons.email),
           const SizedBox(
             height: 5,
           ),
           Auth_text_field(
-              text: "Enter your password", icon: "lib/icons/lock.png"),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Checkbox(
-                value: false,
-                onChanged: (bool? value) {},
-              ),
-              Text(
-                "I agree to the terms and conditions",
-                style: GoogleFonts.poppins(
-                  fontSize: 14.sp,
-                  color: Colors.black87,
-                ),
-              ),
-            ],
+              text: "Digite sua senha", icon: Icons.lock),
+          const SizedBox(
+            height: 5,
           ),
+          Auth_text_field(
+              text: "Confirme sua senha", icon: Icons.lock),
           SizedBox(
             height: 30,
           ),
@@ -121,7 +81,7 @@ class register extends StatelessWidget {
                 ),
               ),
               child: Text(
-                "Create account",
+                "Criar conta",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   fontSize: 18.sp,
@@ -139,7 +99,7 @@ class register extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Already have an account? ",
+                "Já tem uma conta? ",
                 style:
                     GoogleFonts.poppins(fontSize: 14.sp, color: Colors.black87),
               ),
@@ -152,7 +112,7 @@ class register extends StatelessWidget {
                           child: login()));
                 },
                 child: Text(
-                  "Sign in",
+                  "Entrar",
                   style: GoogleFonts.poppins(
                     fontSize: 14.sp,
                     color: const Color.fromARGB(255, 3, 190, 150),

@@ -1,15 +1,20 @@
+
 import 'package:flutter/material.dart';
 
 class Auth_text_field extends StatelessWidget {
   final String text;
-  final String icon;
+  final IconData icon; // Alterado de String para IconData
 
-  Auth_text_field({required this.text, required this.icon});
+  const Auth_text_field({
+    super.key, 
+    required this.text, 
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.1,
         width: MediaQuery.of(context).size.width * 0.9,
         child: TextField(
@@ -19,24 +24,21 @@ class Auth_text_field extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           textAlignVertical: TextAlignVertical.center,
           decoration: InputDecoration(
-              focusColor: Colors.black26,
-              fillColor: Color.fromARGB(255, 247, 247, 247),
-              filled: true,
-              prefixIcon: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                ),
-                child: Container(
-                  child: Image.asset(icon),
-                ),
-              ),
-              prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
-              label: Text(text),
-              floatingLabelBehavior: FloatingLabelBehavior.never,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(30),
-              )),
+            focusColor: Colors.black26,
+            fillColor: const Color.fromARGB(255, 247, 247, 247),
+            filled: true,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Icon(icon), // Usando o widget Icon aqui
+            ),
+            prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
+            label: Text(text),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
         ),
       ),
     );

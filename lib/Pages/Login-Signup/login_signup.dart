@@ -27,7 +27,7 @@ class login_signup extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Lets get Started!",
+              "Vamos começar!",
               style: GoogleFonts.poppins(
                   fontSize: 22.sp,
                   color: Color.fromARGB(211, 14, 13, 13),
@@ -44,7 +44,7 @@ class login_signup extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                "Login to enjoy the features we've \nprovided, and stay healthy",
+                "Faça login para aproveitar todos os\n recursos e acompanhar cada momento",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                     fontSize: 15.sp,
@@ -75,7 +75,7 @@ class login_signup extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Login",
+              "Entrar",
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 18.sp,
@@ -109,7 +109,7 @@ class login_signup extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Sign up",
+              "Cadastrar-se",
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontSize: 18.sp,

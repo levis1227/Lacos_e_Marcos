@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:projeto_atual/Pages/On_Board/on_boarding.dart';
+import 'package:projeto_atual/const/Lacos_e_Marcos_1.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -15,31 +15,41 @@ class _Screen1State extends State<Page1> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-        return on_boarding();
-      }));
+    Timer(const Duration(seconds: 3), () {
+      if (!mounted) return; // Proteção contra troca de tela rápida
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const on_boarding(),
+        ),
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 1, 77, 60),
-      body: Column(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            // Imagem do Logo
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.2,
-              width: MediaQuery.of(context).size.height * 01,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage("images/Logo.png"),
-              )),
-            )
-          ]),
+              child: Image.asset(
+                "images/Logo.png",
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 20), // Espaçamento entre o Logo e o Texto
+            
+            // Texto do Título
+            const LacosEMarcos(),
+          ],
+        ),
+      ),
     );
   }
 }
