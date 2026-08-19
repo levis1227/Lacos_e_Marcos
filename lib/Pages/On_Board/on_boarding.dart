@@ -89,12 +89,11 @@ class _on_boardingState extends State<on_boarding> {
                                     color: Colors.white,
                                     letterSpacing: 1),
                               ),
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.04,
-                                width: MediaQuery.of(context).size.width * 0.04,
-                                child: Image.asset("lib/icons/check.png"),
-                              ),
+                              Icon(
+                                Icons.check,
+                                size: MediaQuery.sizeOf(context).width * 0.06, // Tamanho proporcional
+                                color: Colors.white, // Opcional: defina a cor que desejar
+                              )
                             ],
                           ),
                         ),
@@ -123,12 +122,11 @@ class _on_boardingState extends State<on_boarding> {
                                     color: Colors.white,
                                     letterSpacing: 1),
                               ),
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.06,
-                                child: Image.asset("lib/icons/arrow.png"),
-                              ),
+                              Icon(
+                                Icons.chevron_right,
+                                size: MediaQuery.sizeOf(context).width * 0.06, // Tamanho proporcional
+                                color: Colors.white, // Opcional: defina a cor que desejar
+                              )
                             ],
                           ),
                         ),

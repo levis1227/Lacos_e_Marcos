@@ -18,7 +18,7 @@ class on_board3 extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.8,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  alignment: Alignment.bottomCenter,
+                  alignment: Alignment.center,
                   image: AssetImage(
                     "images/mother1.png",
                   ),
