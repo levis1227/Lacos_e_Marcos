@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_atual/Pages/Views/Page1.dart';
+import 'package:projeto_atual/const/routes/routes.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() {
@@ -11,11 +12,18 @@ class Medics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveSizer(builder: (context, orientation, screenType) {
-      return const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Page1(),
-      );
-    });
+    return ResponsiveSizer(
+      builder: (context, orientation, screenType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          
+          // Define a rota inicial como a Splash/Page1
+          initialRoute: RoutesName.splash,
+          
+          // Conecta o gerenciador de rotas dinâmico com o PageTransition
+          onGenerateRoute: Routes.generatedRoute,
+        );
+      },
+    );
   }
 }

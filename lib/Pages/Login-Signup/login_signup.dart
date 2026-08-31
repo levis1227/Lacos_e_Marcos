@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:projeto_atual/Pages/Login-Signup/login.dart';
-import 'package:projeto_atual/Pages/Login-Signup/register.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class login_signup extends StatelessWidget {
@@ -63,10 +61,7 @@ class login_signup extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.7,
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                  context,
-                  PageTransition(
-                      type: PageTransitionType.rightToLeft, child: login()));
+              Navigator.pushReplacementNamed(context, RoutesName.login);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 3, 190, 150),
@@ -97,10 +92,7 @@ class login_signup extends StatelessWidget {
               borderRadius: BorderRadius.circular(30)),
           child: ElevatedButton(
             onPressed: () {
-              Navigator.pushReplacement(
-                  context,
-                  PageTransition(
-                      type: PageTransitionType.rightToLeft, child: register()));
+              Navigator.pushReplacementNamed(context, RoutesName.register);            
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 255, 255, 255),

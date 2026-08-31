@@ -19,15 +19,12 @@ class register extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.06,
             width: MediaQuery.of(context).size.width * 0.06,
             child: const Icon(
-              Icons.arrow_back_ios_new, // Versão moderna e centralizada do ícone
-              size: 20,
+              Icons.arrow_back, // Versão moderna e centralizada do ícone
+              size: 35,
             ),
           ),
         onPressed: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.leftToRight, child: login()));
+            Navigator.pop(context);
           },
         ),
         title: 

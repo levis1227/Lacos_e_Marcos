@@ -6,6 +6,7 @@ import 'package:projeto_atual/Pages/Login-Signup/login_signup.dart';
 import 'package:projeto_atual/Pages/On_Board/on_board1.dart';
 import 'package:projeto_atual/Pages/On_Board/on_board2.dart';
 import 'package:projeto_atual/Pages/On_Board/on_board3.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class on_boarding extends StatefulWidget {
@@ -69,12 +70,8 @@ class _on_boardingState extends State<on_boarding> {
               onLastpage
                   ? GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            PageTransition(
-                                type: PageTransitionType.bottomToTop,
-                                child: login_signup()));
-                      },
+                        Navigator.pushReplacementNamed(context, RoutesName.loginSignup);
+                        },
                       child: Padding(
                         padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05,),
                         child: Container(

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:projeto_atual/Pages/On_Board/on_boarding.dart';
 import 'package:projeto_atual/const/Lacos_e_Marcos_1.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -17,12 +18,7 @@ class _Screen1State extends State<Page1> {
 
     Timer(const Duration(seconds: 3), () {
       if (!mounted) return; // Proteção contra troca de tela rápida
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => const on_boarding(),
-        ),
-      );
+      Navigator.pushReplacementNamed(context, RoutesName.onboarding);
     });
   }
 
