@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:projeto_atual/Pages/On_Board/on_boarding.dart';
 import 'package:projeto_atual/const/Lacos_e_Marcos_1.dart';
 import 'package:projeto_atual/const/routes/routes_names.dart';
 

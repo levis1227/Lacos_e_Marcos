@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 
-class Auth_text_field extends StatelessWidget {
+class AuthTextField extends StatelessWidget {
   final String text;
-  final IconData icon; // Alterado de String para IconData
+  final IconData icon;
 
-  const Auth_text_field({
+  const AuthTextField({
     super.key, 
     required this.text, 
     required this.icon,
@@ -29,7 +28,7 @@ class Auth_text_field extends StatelessWidget {
             filled: true,
             prefixIcon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(icon), // Usando o widget Icon aqui
+              child: Icon(icon),
             ),
             prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
             label: Text(text),

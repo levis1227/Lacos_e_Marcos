@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:projeto_atual/const/Lacos_e_Marcos_1.dart';
 import 'package:projeto_atual/const/Lacos_e_Marcos_2.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
-class on_board3 extends StatelessWidget {
-  const on_board3({super.key});
+class OnBoard3 extends StatelessWidget {
+  const OnBoard3({super.key});
 
     @override
   Widget build(BuildContext context) {
@@ -15,7 +12,7 @@ class on_board3 extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.6,
           width: MediaQuery.of(context).size.width * 0.8,
           child: Column(

@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_atual/const/routes/routes_names.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class login_signup extends StatelessWidget {
-  const login_signup({super.key});
+class LoginSignup extends StatelessWidget {
+  const LoginSignup({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:projeto_atual/Pages/Login-Signup/login.dart';
-import 'package:projeto_atual/Pages/Login-Signup/register.dart';
-import 'package:projeto_atual/Pages/Views/Homepage.dart';
-import 'package:projeto_atual/Pages/Widgets_em_Uso/ProfileSelectionCard.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
+import 'package:projeto_atual/pages/Widgets_em_Uso/profile_selection_card.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class SelectProfilePage extends StatelessWidget {
@@ -15,32 +12,18 @@ class SelectProfilePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pushReplacement(
-              context,
-              PageTransition(type: PageTransitionType.fade, child: Homepage()),
-            );
-          },
-          child: IconButton(
-            icon: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.06,
-              width: MediaQuery.of(context).size.width * 0.06,
-              child: const Icon(
-                Icons.arrow_back, // Versão moderna e centralizada do ícone
-                size: 35,
-              ),
+        leading: IconButton(
+          icon: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.06,
+            width: MediaQuery.of(context).size.width * 0.06,
+            child: const Icon(
+              Icons.arrow_back,
+              size: 35,
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                PageTransition(
-                  type: PageTransitionType.leftToRight,
-                  child: login(),
-                ),
-              );
-            },
           ),
+          onPressed: () {
+            Navigator.pushNamed(context, RoutesName.login);
+          },
         ),
         title: Text(
           "Quem está acessando?",
@@ -60,7 +43,8 @@ class SelectProfilePage extends StatelessWidget {
               height: 10,
               width: 10,
               decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage("lib/icons/more.png")),
+                image: DecorationImage(
+                    image: AssetImage("lib/icons/more.png")),
               ),
             ),
           ),
@@ -72,37 +56,31 @@ class SelectProfilePage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.rightToLeft,
-                    child: Homepage(),
-                  ),
-                );
+                Navigator.pushNamed(context, RoutesName.homepage);
               },
-              child: ProfileSelectionCard(
+              child: const ProfileSelectionCard(
                 image: "images/avatar.jpg",
                 maintext: "Mamãe",
                 subtext: "Mamãe",
               ),
             ),
 
-            ProfileSelectionCard(
+            const ProfileSelectionCard(
               image: "images/avatar.jpg",
               maintext: "Papai",
               subtext: "Papai",
             ),
-            ProfileSelectionCard(
+            const ProfileSelectionCard(
               image: "images/avatar.jpg",
               maintext: "Vovó",
               subtext: "Vovó",
             ),
-            ProfileSelectionCard(
+            const ProfileSelectionCard(
               image: "images/avatar.jpg",
               maintext: "Vovô",
               subtext: "Vovô",
             ),
-            ProfileSelectionCard(
+            const ProfileSelectionCard(
               image: "images/avatar.jpg",
               maintext: "Babá",
               subtext: "Babá",
@@ -117,16 +95,10 @@ class SelectProfilePage extends StatelessWidget {
               ),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.rightToLeft,
-                      child: register(),
-                    ),
-                  );
+                  Navigator.pushReplacementNamed(context, RoutesName.register);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                  backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -136,7 +108,7 @@ class SelectProfilePage extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 17.sp,
-                    color: Color.fromARGB(255, 3, 190, 150),
+                    color: const Color.fromARGB(255, 3, 190, 150),
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0,
                   ),

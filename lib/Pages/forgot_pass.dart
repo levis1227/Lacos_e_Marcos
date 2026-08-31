@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class forgot_pass extends StatefulWidget {
-  const forgot_pass({super.key});
+class ForgotPass extends StatefulWidget {
+  const ForgotPass({super.key});
 
   @override
-  State<forgot_pass> createState() => _forgot_passState();
+  State<ForgotPass> createState() => _ForgotPassState();
 }
 
-class _forgot_passState extends State<forgot_pass>
+class _ForgotPassState extends State<ForgotPass>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
@@ -66,12 +66,13 @@ class _forgot_passState extends State<forgot_pass>
               ),
             ),
             const SizedBox(height: 30),
-            
+
             // Seletor de Abas (Email / Phone)
             Container(
               height: 50,
               decoration: BoxDecoration(
-                border: Border.all(color: const Color.fromARGB(255, 235, 235, 235)),
+                border: Border.all(
+                    color: const Color.fromARGB(255, 235, 235, 235)),
                 color: const Color.fromARGB(255, 241, 241, 241),
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -93,7 +94,7 @@ class _forgot_passState extends State<forgot_pass>
               ),
             ),
             const SizedBox(height: 20),
-            
+
             // Conteúdo das Abas
             Expanded(
               child: TabBarView(
@@ -122,7 +123,8 @@ class _forgot_passState extends State<forgot_pass>
       children: [
         TextField(
           decoration: InputDecoration(
-            prefixIcon: Icon(icon, color: const Color.fromARGB(255, 3, 190, 150)),
+            prefixIcon:
+                Icon(icon, color: const Color.fromARGB(255, 3, 190, 150)),
             hintText: hintText,
             hintStyle: GoogleFonts.poppins(color: Colors.black38),
             filled: true,
@@ -140,7 +142,8 @@ class _forgot_passState extends State<forgot_pass>
           child: ElevatedButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Código de verificação enviado!')),
+                const SnackBar(
+                    content: Text('Código de verificação enviado!')),
               );
             },
             style: ElevatedButton.styleFrom(

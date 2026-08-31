@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:projeto_atual/Pages/Login-Signup/login.dart';
-import 'package:projeto_atual/Pages/Widgets/Auth_text_field.dart';
+import 'package:projeto_atual/const/routes/routes_names.dart';
+import 'package:projeto_atual/pages/widgets_em_uso/Auth_text_field.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class register extends StatelessWidget {
-  const register({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +45,25 @@ class register extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Auth_text_field(text: "Digite seu nome", icon: Icons.person),
+          AuthTextField(text: "Digite seu nome", icon: Icons.person),
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(text: "Digite seu e-mail", icon: Icons.email),
+          AuthTextField(text: "Digite seu e-mail", icon: Icons.email),
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(
+          AuthTextField(
               text: "Digite sua senha", icon: Icons.lock),
           const SizedBox(
             height: 5,
           ),
-          Auth_text_field(
+          AuthTextField(
               text: "Confirme sua senha", icon: Icons.lock),
           SizedBox(
             height: 30,
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
             width: MediaQuery.of(context).size.width * 0.9,
             child: ElevatedButton(
@@ -102,11 +101,7 @@ class register extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      PageTransition(
-                          type: PageTransitionType.bottomToTop,
-                          child: login()));
+                  Navigator.pushNamed(context, RoutesName.login);
                 },
                 child: Text(
                   "Entrar",

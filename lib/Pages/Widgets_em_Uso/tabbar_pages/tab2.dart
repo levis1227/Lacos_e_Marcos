@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class tab1 extends StatelessWidget {
-  const tab1({super.key});
+class Tab2 extends StatelessWidget {
+  const Tab2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class tab1 extends StatelessWidget {
           height: 40,
         ),
         Center(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
             width: MediaQuery.of(context).size.width * 0.9,
             child: TextField(
@@ -31,12 +31,10 @@ class tab1 extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                       horizontal: 10,
                     ),
-                    child: Container(
-                      child: Image.asset("lib/icons/email.png"),
-                    ),
+                    child: Image.asset("lib/icons/lock.png"),
                   ),
                   prefixIconColor: const Color.fromARGB(255, 3, 190, 150),
-                  label: Text("Enter your email"),
+                  label: Text("Enter your password"),
                   floatingLabelBehavior: FloatingLabelBehavior.never,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -45,7 +43,7 @@ class tab1 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.05,
           width: MediaQuery.of(context).size.width * 01,
           child: ElevatedButton(

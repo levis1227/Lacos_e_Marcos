@@ -7,8 +7,8 @@ class ProfileSelectionCard extends StatelessWidget {
   final String maintext;
   final String subtext;
 
-  ProfileSelectionCard(
-      {required this.image,
+  const ProfileSelectionCard(
+      {super.key, required this.image,
       required this.maintext,
       required this.subtext});
 
@@ -44,7 +44,7 @@ class ProfileSelectionCard extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.1200,
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: Column(

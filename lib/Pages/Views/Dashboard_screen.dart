@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:projeto_atual/Pages/Login-Signup/login.dart';
-import 'package:projeto_atual/Pages/Views/Homepage.dart';
-import 'package:projeto_atual/Pages/Views/Testando_cod.dart';
-import 'package:projeto_atual/Pages/Views/SelectProfilePage.dart';
-import 'package:projeto_atual/Pages/Widgets_em_Uso/ProgressoMarcosCard.dart';
-import 'package:projeto_atual/Pages/Widgets/article.dart';
-import 'package:projeto_atual/Pages/Widgets/banner.dart';
-import 'package:projeto_atual/Pages/Widgets_em_Uso/listIcons.dart';
-import 'package:projeto_atual/Pages/Widgets/list_doctor1.dart';
-import 'package:projeto_atual/Pages/Widgets_em_Uso/profile_list.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import 'package:projeto_atual/const/routes/routes_names.dart';
+import 'package:projeto_atual/pages/views/homepage.dart';
+import 'package:projeto_atual/pages/views/select_profile_page.dart';
+
+import 'package:projeto_atual/pages/widgets_em_uso/progresso_marcos_card.dart';
+import 'package:projeto_atual/pages/widgets_em_uso/list_icons.dart';
+import 'package:projeto_atual/pages/widgets_em_uso/profile_list.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -101,9 +99,9 @@ class Dashboard extends StatelessWidget {
               ],
             ),
           ),
-      
+
           SizedBox(height: 10),
-      
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
@@ -138,42 +136,32 @@ class Dashboard extends StatelessWidget {
               ],
             ),
           ),
-      
+
           SizedBox(height: 20),
-          //Body Start fro here
+
           ProgressoMarcosCard(
-  chartSize: 150, // Altere esse valor para aumentar ou diminuir a roda
-  onVerTodosTap: () {
-    Navigator.push(
-      context,
-      PageTransition(
-        type: PageTransitionType.rightToLeft,
-        child: Homepage(), // Sua página de destino
-      ),
-    );
-  },
-),
- GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.rightToLeft,
-                    child: CircularPercentPage(),
-                  ),
-                );
-              },
-              child: profile_list(
-                  image: "images/avatar.jpg",
-                  title: "Log out",
-                  color: Colors.red,
-                ),
+            chartSize: 150.0, 
+            onVerTodosTap: () {
+              Navigator.pushNamed(context, RoutesName.homepage);
+            },
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, RoutesName.selectProfile);
+            },
+            child: ProfileList(
+              image: "images/avatar.jpg",
+              title: "Log out",
+              color: Colors.red,
             ),
+          ),
           // Banner Design
           const SizedBox(height: 20),
-      
+
           Padding(
-            padding: EdgeInsetsGeometry.directional(top: MediaQuery.of(context).size.height*0.1),
+            padding: EdgeInsetsGeometry.directional(
+              top: MediaQuery.of(context).size.height * 0.1,
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -187,7 +175,7 @@ class Dashboard extends StatelessWidget {
                       ),
                     );
                   },
-                  child: listIcons(
+                  child: ListIcons(
                     icon: Icons.add,
                     text: "Registrar\nMarco",
                     cor: const Color(0xFF6DB896),
@@ -195,15 +183,9 @@ class Dashboard extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.rightToLeft,
-                        child: SelectProfilePage(),
-                      ),
-                    );
+                    Navigator.pushNamed(context, RoutesName.selectProfile);
                   },
-                  child: listIcons(
+                  child: ListIcons(
                     icon: Icons.bar_chart,
                     text: "Ver\ndesenvolvimento",
                     cor: const Color(0xFF71A3DA),
@@ -219,7 +201,7 @@ class Dashboard extends StatelessWidget {
                       ),
                     );
                   },
-                  child: listIcons(
+                  child: ListIcons(
                     icon: Icons.calendar_month,
                     text: "Agenda",
                     cor: const Color(0xFFF3BA59),
@@ -235,7 +217,7 @@ class Dashboard extends StatelessWidget {
                       ),
                     );
                   },
-                  child: listIcons(
+                  child: ListIcons(
                     icon: Icons.menu_book,
                     text: "Orientações",
                     cor: const Color(0xFF897CC3),
@@ -243,9 +225,8 @@ class Dashboard extends StatelessWidget {
                 ),
               ],
             ),
-          ),        
+          ),
         ],
-        
       ),
     );
   }

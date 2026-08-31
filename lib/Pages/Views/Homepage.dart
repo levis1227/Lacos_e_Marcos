@@ -1,8 +1,10 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:projeto_atual/Pages/Views/Dashboard_screen.dart';
+import 'package:projeto_atual/pages/Views/Dashboard_screen.dart';
 
 class Homepage extends StatefulWidget {
+  const Homepage({super.key});
+
   @override
   State<Homepage> createState() => _HomepageState();
 }
