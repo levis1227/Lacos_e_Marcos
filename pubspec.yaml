@@ -41,6 +41,7 @@ dependencies:
   animated_bottom_navigation_bar: ^1.4.1
   percent_indicator: ^4.2.5
   fl_chart: ^1.2.0
+  flex_color_scheme: ^8.4.0
 
 dev_dependencies:
   flutter_test:

@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_atual/const/routes/routes.dart';
-import 'package:projeto_atual/const/routes/routes_names.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:projeto_atual/app/core/theme/app_theme.dart';
+import 'package:projeto_atual/app/routes/routes.dart'; 
+import 'package:projeto_atual/app/routes/routes_names.dart';
 
 void main() {
-  runApp(const Medics());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
 }
 
-class Medics extends StatelessWidget {
-  const Medics({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ResponsiveSizer(
       builder: (context, orientation, screenType) {
         return MaterialApp(
+          title: 'Laços e Marcos',
           debugShowCheckedModeBanner: false,
-          
-          // Define a rota inicial como a Splash/Page1
+          theme: AppTheme.light,
           initialRoute: RoutesName.splash,
-          
-          // Conecta o gerenciador de rotas dinâmico com o PageTransition
-          onGenerateRoute: Routes.generatedRoute,
+          onGenerateRoute: AppRoutes.onGenerateRoute, 
         );
       },
     );
