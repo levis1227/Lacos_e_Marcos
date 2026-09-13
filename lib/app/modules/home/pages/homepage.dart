@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:projeto_atual/app/core/theme/app_colors.dart';
 import 'package:projeto_atual/app/modules/dashboard/pages/dashboard_page.dart';
+import 'package:projeto_atual/app/modules/marcos/pages/marcos.dart';
+import 'package:projeto_atual/app/modules/perfil/pages/perfil.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -24,20 +26,17 @@ class _HomepageState extends State<Homepage> {
 
   final List<Widget> _pages = const [
     DashboardPage(),
-    Scaffold(body: Center(child: Text("Marcos"))),
+    Marcos(),
     Scaffold(body: Center(child: Text("Orientações"))),
     Scaffold(body: Center(child: Text("Locais / Agenda"))),
-    Scaffold(body: Center(child: Text("Perfil"))),
+    Perfil(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: IndexedStack(
-        index: _currentPage,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _currentPage, children: _pages),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: _iconList,
         iconSize: 28,

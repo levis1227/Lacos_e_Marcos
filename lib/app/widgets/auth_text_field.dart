@@ -3,7 +3,7 @@ import 'package:projeto_atual/app/core/theme/app_colors.dart';
 
 class AuthTextField extends StatelessWidget {
   final String text;
-  final IconData icon;
+  final IconData? icon; // <-- Agora é opcional (pode ser nulo)
   final TextEditingController? controller;
   final bool obscureText;
   final TextInputType keyboardType;
@@ -12,7 +12,7 @@ class AuthTextField extends StatelessWidget {
   const AuthTextField({
     super.key,
     required this.text,
-    required this.icon,
+    this.icon, // <-- Removido o 'required'
     this.controller,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
@@ -37,13 +37,14 @@ class AuthTextField extends StatelessWidget {
             fillColor: const Color(0xFFF7F7F7),
             filled: true,
             hintText: text,
-            hintStyle: textTheme.bodyMedium?.copyWith(
-              color: Colors.black38,
-            ),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Icon(icon, color: AppColors.primaryButton),
-            ),
+            hintStyle: textTheme.bodyMedium?.copyWith(color: Colors.black38),
+            // O ícone só é renderizado se for informado
+            prefixIcon: icon != null
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Icon(icon, color: AppColors.primaryButton),
+                  )
+                : null,
             contentPadding: const EdgeInsets.symmetric(
               vertical: 16,
               horizontal: 20,

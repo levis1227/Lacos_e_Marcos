@@ -15,7 +15,7 @@ class LoginSignupPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 100),
-            
+
             Container(
               height: MediaQuery.of(context).size.height * 0.2,
               width: MediaQuery.of(context).size.width * 0.8,
@@ -26,7 +26,7 @@ class LoginSignupPage extends StatelessWidget {
                 ),
               ),
             ),
-            
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -37,7 +37,7 @@ class LoginSignupPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 5),
-            
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -54,7 +54,7 @@ class LoginSignupPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 50),
-            
+
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
               width: MediaQuery.of(context).size.width * 0.7,
@@ -78,7 +78,7 @@ class LoginSignupPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            
+
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.06,
               width: MediaQuery.of(context).size.width * 0.7,

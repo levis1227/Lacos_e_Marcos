@@ -5,13 +5,13 @@ import 'package:projeto_atual/app/core/theme/app_colors.dart';
 
 class AuthSocialLoginButton extends StatelessWidget {
   final String text;
-  final String logo;
+  final String? logo; 
   final VoidCallback? onTap;
 
   const AuthSocialLoginButton({
     super.key,
     required this.text,
-    required this.logo,
+    this.logo, 
     this.onTap,
   });
 
@@ -33,17 +33,16 @@ class AuthSocialLoginButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.07,
-                width: MediaQuery.of(context).size.width * 0.07,
-                child: Image.asset(
-                  logo,
-                  filterQuality: FilterQuality.high,
+            // Renderiza a logo apenas se ela for informada
+            if (logo != null)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.07,
+                  width: MediaQuery.of(context).size.width * 0.07,
+                  child: Image.asset(logo!, filterQuality: FilterQuality.high),
                 ),
               ),
-            ),
             Expanded(
               child: Align(
                 alignment: Alignment.center,
@@ -57,7 +56,8 @@ class AuthSocialLoginButton extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 10),
+            // Mantém a simetria do alinhamento apenas quando houver logo
+            if (logo != null) const SizedBox(width: 10),
           ],
         ),
       ),

@@ -4,7 +4,6 @@ import 'package:projeto_atual/app/routes/routes_names.dart';
 import 'package:projeto_atual/app/widgets/auth_text_field.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
 
@@ -17,7 +16,7 @@ class RegisterPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, size: 28),
+          icon: Icon(Icons.arrow_back, size: 24.sp),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
@@ -45,13 +44,16 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(height: 12),
               const AuthTextField(text: "Confirme sua senha", icon: Icons.lock),
               const SizedBox(height: 30),
-              
+
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Ação de cadastro
+                    Navigator.pushReplacementNamed(
+                      context,
+                      RoutesName.linkBaby,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primaryButton,
@@ -69,7 +71,7 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

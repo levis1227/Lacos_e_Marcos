@@ -16,10 +16,7 @@ class SelectProfilePage extends StatelessWidget {
           icon: SizedBox(
             height: MediaQuery.of(context).size.height * 0.06,
             width: MediaQuery.of(context).size.width * 0.06,
-            child: const Icon(
-              Icons.arrow_back,
-              size: 35,
-            ),
+            child: const Icon(Icons.arrow_back, size: 35),
           ),
           onPressed: () {
             Navigator.pushNamed(context, RoutesName.login);
@@ -36,19 +33,6 @@ class SelectProfilePage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         toolbarHeight: 100,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
-              height: 10,
-              width: 10,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("lib/icons/more.png")),
-              ),
-            ),
-          ),
-        ],
         backgroundColor: Colors.white,
       ),
       body: SafeArea(

@@ -43,11 +43,7 @@ class ListIcons extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(
-                icon,
-                size: 28,
-                color: Colors.white,
-              ),
+              child: Icon(icon, size: 28, color: Colors.white),
             ),
             const SizedBox(height: 8),
             Text(

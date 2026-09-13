@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_atual/app/core/constants/lacos_e_marcos_2.dart';
 
-
-
 class Onboard1Page extends StatelessWidget {
   const Onboard1Page({super.key});
 

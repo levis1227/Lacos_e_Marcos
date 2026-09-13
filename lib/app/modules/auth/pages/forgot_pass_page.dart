@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:projeto_atual/app/core/theme/app_colors.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-
-
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
 
@@ -37,11 +35,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
         backgroundColor: AppColors.background,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: Colors.black87,
-            size: 20,
-          ),
+          icon: Icon(Icons.arrow_back, size: 24.sp),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -72,9 +66,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
             Container(
               height: 50,
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: const Color(0xFFEBEBEB),
-                ),
+                border: Border.all(color: const Color(0xFFEBEBEB)),
                 color: const Color(0xFFF1F1F1),
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -136,9 +128,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
           decoration: InputDecoration(
             prefixIcon: Icon(icon, color: AppColors.primaryButton),
             hintText: hintText,
-            hintStyle: textTheme.bodyMedium?.copyWith(
-              color: Colors.black38,
-            ),
+            hintStyle: textTheme.bodyMedium?.copyWith(color: Colors.black38),
             filled: true,
             fillColor: const Color(0xFFF8F8F8),
             border: OutlineInputBorder(
@@ -154,9 +144,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage>
           child: ElevatedButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Código de verificação enviado!'),
-                ),
+                const SnackBar(content: Text('Código de verificação enviado!')),
               );
             },
             style: ElevatedButton.styleFrom(

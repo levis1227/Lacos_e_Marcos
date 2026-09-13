@@ -42,6 +42,11 @@ dependencies:
   percent_indicator: ^4.2.5
   fl_chart: ^1.2.0
   flex_color_scheme: ^8.4.0
+  timelines_plus: ^2.0.1
+  intl: ^0.20.3
+  flutter_rounded_date_picker: ^3.0.4
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

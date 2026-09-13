@@ -1,8 +1,8 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:projeto_atual/app/core/constants/lacos_e_marcos_1.dart';
 import 'package:projeto_atual/app/routes/routes_names.dart';
-
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -44,13 +44,10 @@ class _SplashPageState extends State<SplashPage> {
             // Imagem da Logo
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.2,
-              child: Image.asset(
-                "images/Logo.png",
-                fit: BoxFit.contain,
-              ),
+              child: Image.asset("images/Logo.png", fit: BoxFit.contain),
             ),
             const SizedBox(height: 20),
-            
+
             // Texto/Widget de Título
             const LacosEMarcos(),
           ],

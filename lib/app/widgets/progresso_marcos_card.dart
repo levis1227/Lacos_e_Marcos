@@ -51,8 +51,7 @@ class ProgressoMarcosCard extends StatelessWidget {
                     PieChart(
                       PieChartData(
                         sectionsSpace: 0,
-                        centerSpaceRadius:
-                            centerRadius > 0 ? centerRadius : 20,
+                        centerSpaceRadius: centerRadius > 0 ? centerRadius : 20,
                         startDegreeOffset: -90,
                         sections: [
                           PieChartSectionData(
@@ -158,10 +157,7 @@ class _LegendItem extends StatelessWidget {
         Container(
           width: 10,
           height: 10,
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
-          ),
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         ),
         const SizedBox(width: 8),
         Expanded(

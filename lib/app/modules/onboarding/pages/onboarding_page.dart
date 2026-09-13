@@ -39,11 +39,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   onLastpage = (index == 2);
                 });
               },
-              children: const [
-                Onboard1Page(),
-                Onboard2Page(),
-                Onboard3Page(),
-              ],
+              children: const [Onboard1Page(), Onboard2Page(), Onboard3Page()],
             ),
             Column(
               children: [
@@ -125,7 +121,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

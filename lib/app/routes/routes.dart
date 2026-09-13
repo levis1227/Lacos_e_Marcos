@@ -5,6 +5,7 @@ import 'package:projeto_atual/app/modules/auth/pages/login_page.dart';
 import 'package:projeto_atual/app/modules/auth/pages/login_signup_page.dart';
 import 'package:projeto_atual/app/modules/auth/pages/register_page.dart';
 import 'package:projeto_atual/app/modules/home/pages/homepage.dart';
+import 'package:projeto_atual/app/modules/link_baby/pages/link_baby_page.dart';
 import 'package:projeto_atual/app/modules/onboarding/pages/onboarding_page.dart';
 import 'package:projeto_atual/app/modules/onboarding/pages/splash_page.dart';
 import 'package:projeto_atual/app/modules/profile/pages/select_profile_page.dart';
@@ -45,6 +46,13 @@ abstract class AppRoutes {
         return PageTransition(
           type: PageTransitionType.rightToLeft,
           child: const RegisterPage(),
+          settings: settings,
+        );
+
+      case RoutesName.linkBaby:
+        return PageTransition(
+          type: PageTransitionType.fade,
+          child: const LinkBabyPage(),
           settings: settings,
         );
 

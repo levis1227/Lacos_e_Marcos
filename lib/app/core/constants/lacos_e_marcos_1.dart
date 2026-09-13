@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_atual/app/core/theme/app_colors.dart';
 
-
 class LacosEMarcos extends StatelessWidget {
   const LacosEMarcos({super.key});
 
