@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:projeto_atual/app/widgets/comment_text_field.dart';
@@ -38,15 +37,12 @@ class _MarcoRegisterPageState extends State<MarcoRegisterPage> {
 
   void dateTime() async {
     FocusScope.of(context).unfocus();
-    final selectedDate = await showRoundedDatePicker(
+    final selectedDate = await showDatePicker(
       context: context,
       initialDate: newDateTime,
       firstDate: DateTime(DateTime.now().year - 1),
       lastDate: DateTime(DateTime.now().year + 1),
       locale: const Locale('pt', 'BR'),
-      theme: ThemeData(primarySwatch: Colors.cyan),
-      height: 30.h,
-      borderRadius: 26.sp,
     );
 
     if (selectedDate != null) {
