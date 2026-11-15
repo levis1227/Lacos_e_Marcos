@@ -19,6 +19,7 @@ abstract class AppColors {
   static const Color purple = Color(0xFF897CC3);
   static const Color red = Colors.redAccent;
   static const Color cardBackground = Color(0xFFF8F8F8);
+  static const Color greenLight = Color(0xFFE3F3EA); // Fundo suave verde (módulo Memórias)
 
   // Botões Desativados e Não Selecionados
   static const Color disabledButton = Color(0xFFE0E0E0); // Cinza para fundo de botão inativo/desativado

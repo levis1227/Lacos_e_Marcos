@@ -9,4 +9,6 @@ abstract class RoutesName {
   static const String forgotPass = '/forgot-password';
   static const String homepage = '/home';
   static const String dashboard = '/dashboard';
+  static const String memories = '/memories';
+  static const String orientations = '/orientations';
 }

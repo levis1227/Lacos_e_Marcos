@@ -173,7 +173,7 @@ class DashboardPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, RoutesName.selectProfile);
+                      Navigator.pushNamed(context, RoutesName.orientations);
                     },
                     child: const ListIcons(
                       icon: Icons.menu_book,

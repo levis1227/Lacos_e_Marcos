@@ -6,7 +6,9 @@ import 'package:projeto_atual/app/modules/auth/pages/login_signup_page.dart';
 import 'package:projeto_atual/app/modules/auth/pages/register_page.dart';
 import 'package:projeto_atual/app/modules/home/pages/homepage.dart';
 import 'package:projeto_atual/app/modules/link_baby/pages/link_baby_page.dart';
+import 'package:projeto_atual/app/modules/memorias/pages/memories_screen.dart';
 import 'package:projeto_atual/app/modules/onboarding/pages/onboarding_page.dart';
+import 'package:projeto_atual/app/modules/orientacoes/pages/orientations_screen.dart';
 import 'package:projeto_atual/app/modules/onboarding/pages/splash_page.dart';
 import 'package:projeto_atual/app/modules/profile/pages/select_profile_page.dart';
 import 'package:projeto_atual/app/routes/routes_names.dart';
@@ -74,6 +76,23 @@ abstract class AppRoutes {
         return PageTransition(
           type: PageTransitionType.fade,
           child: const Homepage(),
+          settings: settings,
+        );
+
+      case RoutesName.memories:
+        return PageTransition(
+          type: PageTransitionType.rightToLeft,
+          // Nome do bebê pode ser enviado em `arguments` (String)
+          child: MemoriesScreen(
+            babyName: settings.arguments as String? ?? 'seu bebê',
+          ),
+          settings: settings,
+        );
+
+      case RoutesName.orientations:
+        return PageTransition(
+          type: PageTransitionType.rightToLeft,
+          child: const OrientationsScreen(),
           settings: settings,
         );
 

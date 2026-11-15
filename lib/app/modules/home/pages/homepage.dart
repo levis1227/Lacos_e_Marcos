@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:projeto_atual/app/core/theme/app_colors.dart';
 import 'package:projeto_atual/app/modules/dashboard/pages/dashboard_page.dart';
 import 'package:projeto_atual/app/modules/marcos/pages/marcos.dart';
+import 'package:projeto_atual/app/modules/memorias/pages/memories_screen.dart';
+import 'package:projeto_atual/app/modules/orientacoes/pages/orientations_screen.dart';
 import 'package:projeto_atual/app/modules/perfil/pages/perfil.dart';
 
 class Homepage extends StatefulWidget {
@@ -20,15 +22,15 @@ class _HomepageState extends State<Homepage> {
     Icons.home_outlined,
     Icons.star_outline,
     Icons.menu_book_outlined,
-    Icons.location_on_outlined,
+    Icons.favorite_outline,
     Icons.person_outline,
   ];
 
   final List<Widget> _pages = const [
     DashboardPage(),
     Marcos(),
-    Scaffold(body: Center(child: Text("Orientações"))),
-    Scaffold(body: Center(child: Text("Locais / Agenda"))),
+    OrientationsScreen(),
+    MemoriesScreen(babyName: 'Marcos'),
     Perfil(),
   ];
 
